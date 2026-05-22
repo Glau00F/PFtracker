@@ -1,7 +1,7 @@
 {
-  "name": "Finance Tracker",
+  "name": "MyFinance",
   "short_name": "Finance",
-  "description": "PLI personal finance dashboard",
+  "description": "Personal finance dashboard",
   "start_url": "./index.html",
   "scope": "/",
   "display": "standalone",
