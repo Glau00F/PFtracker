@@ -1,7 +1,7 @@
 {
-  "name": "Finance Tracker",
-  "short_name": "Finance",
-  "description": "PLI personal finance dashboard",
+  "name": "MyFinance",
+  "short_name": "MyFin",
+  "description": "Personal finance dashboard",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#0a1628",
