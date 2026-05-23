@@ -1,14 +1,23 @@
 {
-  "exportedAt": "2026-05-23T08:00:02.064Z",
+  "exportedAt": "2026-05-23T18:24:10.960Z",
   "finance": {
     "asOf": {
       "year": 2026,
       "month": 5
     },
     "summary": {
+      "assets": 617753,
+      "liabilities": 0,
       "netWorth": 617753,
       "exclApt": 337753,
-      "debtRatio": 0
+      "debtRatio": 0,
+      "emergencyFund": {
+        "liquid": 20810,
+        "covered": 7.6,
+        "target": 8,
+        "targetAmount": 21986,
+        "ok": false
+      }
     },
     "groups": [
       {
@@ -127,78 +136,78 @@
       {
         "year": 2026,
         "projected": true,
-        "netWorth": 654001,
+        "netWorth": 651666,
         "exclApt": 353310
       },
       {
         "year": 2027,
         "projected": true,
-        "netWorth": 721522,
+        "netWorth": 714408,
         "exclApt": 381741
       },
       {
         "year": 2028,
         "projected": true,
-        "netWorth": 796511,
+        "netWorth": 783483,
         "exclApt": 412559
       },
       {
         "year": 2029,
         "projected": true,
-        "netWorth": 879834,
+        "netWorth": 859548,
         "exclApt": 445968
       },
       {
         "year": 2030,
         "projected": true,
-        "netWorth": 972459,
+        "netWorth": 943332,
         "exclApt": 482190
       },
       {
         "year": 2031,
         "projected": true,
-        "netWorth": 1075468,
+        "netWorth": 1035638,
         "exclApt": 521464
       },
       {
         "year": 2032,
         "projected": true,
-        "netWorth": 1190077,
+        "netWorth": 1137356,
         "exclApt": 564053
       },
       {
         "year": 2033,
         "projected": true,
-        "netWorth": 1317646,
+        "netWorth": 1249472,
         "exclApt": 610239
       },
       {
         "year": 2034,
         "projected": true,
-        "netWorth": 1459701,
+        "netWorth": 1373075,
         "exclApt": 660330
       },
       {
         "year": 2035,
         "projected": true,
-        "netWorth": 1617950,
+        "netWorth": 1509372,
         "exclApt": 714661
       },
       {
         "year": 2036,
         "projected": true,
-        "netWorth": 1794311,
+        "netWorth": 1659697,
         "exclApt": 773595
       },
       {
         "year": 2037,
         "projected": true,
-        "netWorth": 1990935,
+        "netWorth": 1825530,
         "exclApt": 837526
       }
     ],
     "projAssumptions": {
-      "property": 0.13,
+      "property": 0.115,
       "investments": 0.08,
       "lockedsavings": 0.09,
       "liquidsavings": 0.03,
