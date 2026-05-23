@@ -240,7 +240,7 @@ function chartDefaults(){
   return{
     plugins:{
       legend:{labels:{color:lc,font:{family:'DM Mono',size:10},padding:12,usePointStyle:true,pointStyle:'line',
-        generateLabels(chart){return chart.data.datasets.map((ds,i)=>({text:ds.label,fillStyle:ds.borderColor,strokeStyle:ds.borderColor,lineWidth:2,lineDash:ds.borderDash||[],hidden:!chart.isDatasetVisible(i),datasetIndex:i,pointStyle:'line'}));}
+        generateLabels(chart){return chart.data.datasets.map((ds,i)=>({text:ds.label,fontColor:lc,fillStyle:ds.borderColor,strokeStyle:ds.borderColor,lineWidth:2,lineDash:ds.borderDash||[],hidden:!chart.isDatasetVisible(i),datasetIndex:i,pointStyle:'line'}));}
       }},
       tooltip:{callbacks:{label:ctx=>` ${eur(ctx.parsed.y)}`}}
     },
