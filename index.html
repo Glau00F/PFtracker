@@ -686,7 +686,7 @@ function chartDefaults() {
   const lc = isDark ? '#8fa8c8' : '#4a5568';
   return {
     plugins: {
-      legend: { labels: { color:lc, font:{ family:'DM Mono', size:10 }, boxWidth:10, padding:8,usePointStyle: true, pointStyle: 'rect' } },
+      legend: { labels: { color:lc, font:{ family:'DM Mono', size:10 }, boxWidth:10, padding:8 } },
       tooltip: { callbacks: { label: ctx => ` ${eur(ctx.parsed.y)}` } }
     },
     scales: {
