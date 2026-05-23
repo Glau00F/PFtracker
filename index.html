@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Finance">
+<meta name="theme-color" content="#0a1628" id="theme-color-meta">
+<title>Finance · PLI</title>
+<link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root {
+  --navy:#0a1628;--navy2:#111f3a;--navy3:#1a2f52;--teal:#00b4a0;--teal2:#00d4bc;--teal3:#00f5e0;
+  --gold:#f0c040;--red:#e05555;--green:#4ecb8d;--text:#e8eef8;--text2:#8fa8c8;--text3:#4a6080;
+  --card:#111f3a;--card2:#162540;--border:#1e3355;--bg:#0a1628;--radius:14px;
+  --safe-top:env(safe-area-inset-top,0px);--safe-bot:env(safe-area-inset-bottom,0px);
+}
+html.light {
+  --navy:#f0f4fa;--navy2:#e4eaf4;--navy3:#d8e2f0;--teal:#007d6f;--teal2:#009688;--teal3:#00b4a0;
+  --gold:#b87c00;--red:#c0392b;--green:#1a7a52;--text:#1a1a2e;--text2:#4a5568;--text3:#9aa5b4;
+  --card:#ffffff;--card2:#f7f9fc;--border:#dde3ee;--bg:#f0f4fa;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'DM Mono',monospace;background:var(--navy);color:var(--text);min-height:100dvh;overflow-x:hidden;transition:background .2s,color .2s}
+.header{position:sticky;top:0;z-index:100;background:rgba(10,22,40,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:calc(var(--safe-top) + 12px) 20px 12px;display:flex;align-items:center;justify-content:space-between;transition:background .2s}
+html.light .header{background:rgba(240,244,250,.92)}
+.header-title{font-family:'DM Sans',sans-serif;font-size:1.15rem;font-weight:600;letter-spacing:-.01em;display:flex;align-items:center;gap:8px}
+.header-title span{color:var(--teal)}
+.header-right{display:flex;align-items:center;gap:8px}
+.timestamp{font-size:.62rem;color:var(--text3);letter-spacing:.04em;text-align:right;line-height:1.4}
+.icon-btn{background:none;border:none;color:var(--teal);font-size:1.1rem;cursor:pointer;padding:4px 6px;transition:transform .3s,opacity .2s;line-height:1}
+.icon-btn:active{opacity:.6}
+.refresh-btn.spinning{animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.nav{display:flex;background:var(--navy2);border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav-tab{flex:1;min-width:80px;padding:12px 8px;background:none;border:none;color:var(--text3);font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:color .2s;border-bottom:2px solid transparent;white-space:nowrap}
+.nav-tab.active{color:var(--teal);border-bottom-color:var(--teal)}
+.subtabs{display:flex;gap:8px;padding:12px 16px 0}
+.subtab{padding:6px 14px;background:var(--card);border:1px solid var(--border);border-radius:20px;color:var(--text3);font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:all .2s}
+.subtab.active{background:var(--teal);border-color:var(--teal);color:var(--navy)}
+.content{padding:16px 16px calc(var(--safe-bot) + 24px);animation:fadeIn .25s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:14px 12px;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--teal),transparent)}
+.card.full{grid-column:1/-1}
+.card.accent::before{background:linear-gradient(90deg,var(--gold),transparent)}
+.card.green::before{background:linear-gradient(90deg,var(--green),transparent)}
+.card.red-card::before{background:linear-gradient(90deg,var(--red),transparent)}
+.card-label{font-size:.6rem;color:var(--text3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+.card-value{font-family:'DM Sans',sans-serif;font-size:1.3rem;font-weight:600;letter-spacing:-.02em;line-height:1}
+.card-value.small{font-size:1.05rem}
+.card-sub{font-size:.65rem;color:var(--text2);margin-top:4px}
+.pos{color:var(--green)}.neg{color:var(--red)}.teal{color:var(--teal)}.ef-ok{color:var(--green)}.ef-bad{color:var(--red)}
+.section-head{font-size:.62rem;color:var(--text3);letter-spacing:.12em;text-transform:uppercase;margin:20px 0 10px;display:flex;align-items:center;gap:8px}
+.section-head::after{content:'';flex:1;height:1px;background:var(--border)}
+.bal-table{width:100%;border-collapse:collapse}
+.bal-table td{padding:10px 8px;border-bottom:1px solid var(--border);font-size:.75rem}
+.bal-table td:last-child{text-align:right;font-weight:500}
+.bal-group-property{border-left:3px solid #4a90d9}
+.bal-group-investments{border-left:3px solid var(--green)}
+.bal-group-lockedsavings{border-left:3px solid #f0a040}
+.bal-group-liquidsavings{border-left:3px solid #f07040}
+.bal-group-liquidity{border-left:3px solid #a070d0}
+.bal-group-credit{border-left:3px solid var(--red)}
+.bal-total td{font-family:'DM Sans',sans-serif;font-weight:600;font-size:.85rem;color:var(--teal);padding-top:14px;border-bottom:none}
+.chart-wrap{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:16px 12px;margin-bottom:16px}
+.chart-title{font-size:.62rem;color:var(--text3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+.chart-wrap canvas{max-height:200px}
+.port-table-wrap{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:16px}
+.port-table{width:100%;border-collapse:collapse}
+.port-table th{padding:10px;background:var(--card2);font-size:.58rem;color:var(--text3);letter-spacing:.1em;text-transform:uppercase;text-align:right;border-bottom:1px solid var(--border);white-space:nowrap}
+.port-table th:first-child{text-align:left}
+.port-table td{padding:10px;font-size:.72rem;border-bottom:1px solid rgba(30,51,85,.5);text-align:right;white-space:nowrap}
+.port-table td:first-child{text-align:left}
+.port-table tr:last-child td{border-bottom:none}
+.stock-name{font-size:.72rem;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:110px;display:block}
+.stock-broker{font-size:.58rem;color:var(--text3);margin-top:2px}
+.target-badge{display:inline-block;background:var(--green);color:var(--navy);font-size:.6rem;font-weight:500;padding:2px 7px;border-radius:10px;margin-left:6px;vertical-align:middle}
+.proj-table-wrap{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow-x:auto;margin-bottom:16px}
+.proj-table{border-collapse:collapse;min-width:100%}
+.proj-table th,.proj-table td{padding:9px 10px;font-size:.68rem;text-align:right;border-bottom:1px solid rgba(30,51,85,.5);white-space:nowrap}
+.proj-table th{background:var(--card2);color:var(--text3);font-size:.58rem;letter-spacing:.08em;text-transform:uppercase}
+.proj-table td:first-child,.proj-table th:first-child{text-align:left}
+.proj-table tr:last-child td{border-bottom:none}
+.proj-table .projected{color:var(--teal2)}
+.proj-table .hit{background:rgba(78,203,141,.12);color:var(--green);font-weight:600}
+.proj-table .current-row td{background:rgba(0,180,160,.08)}
+.loading{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:300px;gap:16px;color:var(--text3)}
+.loader{width:36px;height:36px;border:2px solid var(--border);border-top-color:var(--teal);border-radius:50%;animation:spin .8s linear infinite}
+.error-msg{background:rgba(224,85,85,.1);border:1px solid rgba(224,85,85,.3);border-radius:var(--radius);padding:16px;color:var(--red);font-size:.78rem;text-align:center;margin:20px 0}
+.pie-wrap{display:flex;gap:12px;align-items:flex-start}
+.pie-wrap canvas{flex:0 0 150px;max-width:150px}
+.pie-legend{flex:1}
+.pie-legend-item{display:flex;align-items:center;gap:6px;margin-bottom:6px;font-size:.65rem;color:var(--text2)}
+.pie-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.settings-overlay{display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.5);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.settings-overlay.open{display:flex;align-items:flex-end}
+.settings-sheet{width:100%;background:var(--navy2);border-radius:20px 20px 0 0;padding:20px 20px calc(var(--safe-bot) + 28px);max-height:85vh;overflow-y:auto;animation:slideUp .3s ease}
+@keyframes slideUp{from{transform:translateY(100%)}to{transform:none}}
+.settings-title{font-family:'DM Sans',sans-serif;font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:20px;display:flex;align-items:center;justify-content:space-between}
+.settings-close{background:var(--card);border:none;color:var(--text2);width:30px;height:30px;border-radius:50%;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.settings-section{margin-bottom:20px}
+.settings-section-label{font-size:.6rem;color:var(--text3);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+.settings-row{display:flex;align-items:center;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--border)}
+.settings-row:last-child{border-bottom:none}
+.settings-row-label{font-size:.78rem;color:var(--text)}
+.settings-row-sub{font-size:.65rem;color:var(--text3);margin-top:2px}
+.toggle{position:relative;width:44px;height:24px;flex-shrink:0}
+.toggle input{opacity:0;width:0;height:0}
+.toggle-track{position:absolute;inset:0;background:var(--border);border-radius:12px;cursor:pointer;transition:background .2s}
+.toggle input:checked+.toggle-track{background:var(--teal)}
+.toggle-track::after{content:'';position:absolute;left:3px;top:3px;width:18px;height:18px;background:white;border-radius:50%;transition:transform .2s}
+.toggle input:checked+.toggle-track::after{transform:translateX(20px)}
+.radio-group{display:flex;gap:6px;flex-wrap:wrap}
+.radio-btn{padding:6px 12px;background:var(--card);border:1px solid var(--border);border-radius:20px;color:var(--text2);font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:all .2s}
+.radio-btn.active{background:var(--teal);border-color:var(--teal);color:var(--navy)}
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-title">
+    <svg width="28" height="28" viewBox="0 0 113.39 113.39" xmlns="http://www.w3.org/2000/svg" style="border-radius:4px;display:block">
+      <rect fill="#fff" x=".19" y=".19" width="113" height="113"/>
+      <path fill="#009582" d="M13.33,23.45h17.65v7.31h-8.16v51.5h8.16v7.35H13.33V23.45Z"/>
+      <path fill="#252259" d="M40.96,38.92h10.65v10.51h-10.65v-10.51ZM40.96,65.25h10.65v10.51h-10.65v-10.51Z"/>
+      <path fill="#252259" d="M73.35,37.02c2.74,6.33,4.11,12.7,4.11,19.12,0,7.05-1.63,14.23-4.88,21.52-1.83,4.08-3.55,7.15-5.16,9.21l-2.49,3.41h-7.4c3.08-5.58,5.23-10.15,6.45-13.71,2.08-6.02,3.12-12.62,3.12-19.79,0-4.59-.37-8.84-1.12-12.73-1.15-5.93-3.19-11.6-6.13-17.02l-2.14-3.94h7.55c3.56,4.97,6.26,9.61,8.11,13.92h-.02Z"/>
+      <path fill="#009582" d="M82.41,82.27h8.16V30.62h-8.16v-7.17h17.65v66.16h-17.65v-7.35h0Z"/>
+    </svg>
+    Finance <span>tracker</span>
+  </div>
+  <div class="header-right">
+    <div class="timestamp" id="ts">—</div>
+    <button class="icon-btn refresh-btn" id="refreshBtn" onclick="loadData(true)" title="Refresh">↻</button>
+    <button class="icon-btn" onclick="openSettings()" title="Settings">⚙</button>
+  </div>
+</div>
+<nav class="nav" id="mainNav">
+  <button class="nav-tab active" onclick="showSection('finance')">Finance</button>
+  <button class="nav-tab" onclick="showSection('portfolio')">Portfolio</button>
+</nav>
+<div id="app"><div class="loading"><div class="loader"></div><div>Loading snapshot…</div></div></div>
+<div class="settings-overlay" id="settingsOverlay" onclick="onOverlayClick(event)">
+  <div class="settings-sheet" id="settingsSheet">
+    <div class="settings-title">Settings<button class="settings-close" onclick="closeSettings()">✕</button></div>
+    <div class="settings-section">
+      <div class="settings-section-label">Appearance</div>
+      <div class="settings-row">
+        <div><div class="settings-row-label">Light mode</div><div class="settings-row-sub">Switch to a lighter colour scheme</div></div>
+        <label class="toggle"><input type="checkbox" id="set-light-mode" onchange="applyLightMode(this.checked)"><div class="toggle-track"></div></label>
+      </div>
+    </div>
+    <div class="settings-section">
+      <div class="settings-section-label">Default tab on open</div>
+      <div class="settings-row">
+        <div class="radio-group" id="set-default-tab">
+          <button class="radio-btn active" data-val="finance" onclick="setDefaultTab('finance',this)">Finance</button>
+          <button class="radio-btn" data-val="portfolio" onclick="setDefaultTab('portfolio',this)">Portfolio</button>
+        </div>
+      </div>
+    </div>
+    <div class="settings-section"><div class="settings-section-label">Finance — Balance cards</div><div id="set-fin-balance-cards"></div></div>
+    <div class="settings-section"><div class="settings-section-label">Finance — Projections cards</div><div id="set-fin-proj-cards"></div></div>
+    <div class="settings-section"><div class="settings-section-label">Portfolio cards</div><div id="set-port-cards"></div></div>
+    <div class="settings-section"><div class="settings-section-label">Portfolio — Projections cards</div><div id="set-port-proj-cards"></div></div>
+  </div>
+</div>
+<script>
+const SNAPSHOT_URL='https://raw.githubusercontent.com/glau00f/PFtracker/main/snapshot.json';
+let snapshot=null,currentSection='finance',currentFinanceTab='balance',currentPortfolioTab='portfolio',charts={};
+
+const CARD_DEFS={
+  'fin-balance':[
+    {key:'netWorth',label:'Net worth',defaultOn:true},{key:'exclApt',label:'Excl. apartment',defaultOn:true},
+    {key:'assets',label:'Assets',defaultOn:false},{key:'liabilities',label:'Liabilities',defaultOn:false},
+    {key:'debtRatio',label:'Debt ratio',defaultOn:true},{key:'emergencyFund',label:'Emergency fund',defaultOn:false},
+  ],
+  'fin-proj':[{key:'currentExcl',label:'Current excl. apt',defaultOn:true},{key:'targetYear',label:'€1M target year',defaultOn:true}],
+  'port':[{key:'totalValue',label:'Total value',defaultOn:true},{key:'totalGain',label:'Total gain',defaultOn:true},{key:'totalCost',label:'Cost basis',defaultOn:true}],
+  'port-proj':[{key:'p2030',label:'2030 value',defaultOn:true},{key:'p2035',label:'2035 value',defaultOn:true},{key:'pEnd',label:'End date value',defaultOn:true},{key:'milestone',label:'€1M milestone',defaultOn:true}],
+};
+let prefs={};
+function loadPrefs(){try{const r=localStorage.getItem('pwa-prefs');if(r)prefs=JSON.parse(r);}catch{}}
+function savePrefs(){try{localStorage.setItem('pwa-prefs',JSON.stringify(prefs));}catch{}}
+function getPref(k,d){return k in prefs?prefs[k]:d;}
+function isCardVisible(s,k){const d=CARD_DEFS[s]?.find(c=>c.key===k);return getPref(`card-${s}-${k}`,d?d.defaultOn:true);}
+function applyLightMode(on){document.documentElement.classList.toggle('light',on);document.getElementById('theme-color-meta').content=on?'#f0f4fa':'#0a1628';prefs['lightMode']=on;savePrefs();if(snapshot)render();}
+function setDefaultTab(v,btn){document.querySelectorAll('#set-default-tab .radio-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');prefs['defaultTab']=v;savePrefs();}
+function setCardPref(s,k,on){prefs[`card-${s}-${k}`]=on;savePrefs();if(snapshot)render();}
+function renderSettingsCardSections(){
+  const map={'fin-balance-cards':'fin-balance','fin-proj-cards':'fin-proj','port-cards':'port','port-proj-cards':'port-proj'};
+  Object.entries(map).forEach(([elId,section])=>{
+    const el=document.getElementById('set-'+elId);if(!el)return;
+    el.innerHTML=(CARD_DEFS[section]||[]).map(c=>{const on=getPref(`card-${section}-${c.key}`,c.defaultOn);
+      return `<div class="settings-row"><div><div class="settings-row-label">${c.label}</div></div><label class="toggle"><input type="checkbox" ${on?'checked':''} onchange="setCardPref('${section}','${c.key}',this.checked)"><div class="toggle-track"></div></label></div>`;
+    }).join('');
+  });
+}
+function openSettings(){
+  document.getElementById('set-light-mode').checked=getPref('lightMode',false);
+  const dt=getPref('defaultTab','finance');
+  document.querySelectorAll('#set-default-tab .radio-btn').forEach(b=>b.classList.toggle('active',b.dataset.val===dt));
+  renderSettingsCardSections();document.getElementById('settingsOverlay').classList.add('open');
+}
+function closeSettings(){document.getElementById('settingsOverlay').classList.remove('open');}
+function onOverlayClick(e){if(e.target===document.getElementById('settingsOverlay'))closeSettings();}
+
+async function loadData(force=false){
+  const btn=document.getElementById('refreshBtn');btn.classList.add('spinning');
+  try{
+    if(!force){const c=sessionStorage.getItem('snapshot');if(c){snapshot=JSON.parse(c);render();btn.classList.remove('spinning');return;}}
+    const res=await fetch(SNAPSHOT_URL+'?t='+Date.now());if(!res.ok)throw new Error(`HTTP ${res.status}`);
+    snapshot=await res.json();sessionStorage.setItem('snapshot',JSON.stringify(snapshot));render();
+  }catch(e){document.getElementById('app').innerHTML=`<div class="content"><div class="error-msg">Could not load snapshot.<br><small>${e.message}</small><br><br>Make sure your laptop is on and connected.</div></div>`;}
+  btn.classList.remove('spinning');
+}
+function render(){
+  const ts=document.getElementById('ts');
+  if(snapshot?.exportedAt){const d=new Date(snapshot.exportedAt);ts.innerHTML=d.toLocaleDateString('en-IE',{day:'numeric',month:'short'})+'<br>'+d.toLocaleTimeString('en-IE',{hour:'2-digit',minute:'2-digit'});}
+  destroyCharts();if(currentSection==='finance')renderFinance();else renderPortfolio();
+}
+function destroyCharts(){Object.values(charts).forEach(c=>{try{c.destroy();}catch{}});charts={};}
+function showSection(sec){currentSection=sec;document.querySelectorAll('.nav-tab').forEach((t,i)=>t.classList.toggle('active',(i===0&&sec==='finance')||(i===1&&sec==='portfolio')));if(snapshot)render();}
+function showFinanceTab(tab){currentFinanceTab=tab;render();}
+function showPortfolioTab(tab){currentPortfolioTab=tab;render();}
+
+function eur(n,dec=0){if(n==null)return'—';return'€'+Math.abs(n).toLocaleString('en-IE',{minimumFractionDigits:dec,maximumFractionDigits:dec});}
+function pct(n,dec=1){if(n==null)return'—';return(n>=0?'+':'')+n.toFixed(dec)+'%';}
+function gainClass(n){return n>=0?'pos':'neg';}
+function eurK(n){if(Math.abs(n)>=1000000)return'€'+(n/1000000).toFixed(2)+'M';if(Math.abs(n)>=1000)return'€'+(n/1000).toFixed(0)+'k';return eur(n);}
+
+function chartDefaults(){
+  const isDark=!document.documentElement.classList.contains('light');
+  const tc=isDark?'#4a6080':'#9aa5b4',gc=isDark?'rgba(30,51,85,0.5)':'rgba(0,0,0,0.07)',lc=isDark?'#8fa8c8':'#4a5568';
+  return{
+    plugins:{
+      legend:{labels:{color:lc,font:{family:'DM Mono',size:10},padding:12,usePointStyle:true,pointStyle:'line',
+        generateLabels(chart){return chart.data.datasets.map((ds,i)=>({text:ds.label,fontColor:lc,fillStyle:ds.borderColor,strokeStyle:ds.borderColor,lineWidth:2,lineDash:ds.borderDash||[],hidden:!chart.isDatasetVisible(i),datasetIndex:i,pointStyle:'line'}));}
+      }},
+      tooltip:{callbacks:{label:ctx=>` ${eur(ctx.parsed.y)}`}}
+    },
+    scales:{x:{ticks:{color:tc,font:{size:9}},grid:{color:gc}},y:{ticks:{color:tc,font:{size:9},callback:v=>eurK(v)},grid:{color:gc}}}
+  };
+}
+
+function renderFinance(){
+  const fin=snapshot?.finance;if(!fin){showError();return;}
+  const tabs=`<div class="subtabs"><button class="subtab ${currentFinanceTab==='balance'?'active':''}" onclick="showFinanceTab('balance')">Balance</button><button class="subtab ${currentFinanceTab==='projections'?'active':''}" onclick="showFinanceTab('projections')">Projections</button></div>`;
+  currentFinanceTab==='balance'?renderBalance(fin,tabs):renderFinanceProjections(fin,tabs);
+}
+
+function renderBalance(fin,tabs){
+  const s=fin.summary,mon=new Date(0,fin.asOf.month-1).toLocaleString('en-IE',{month:'long'});
+  const pieColors={property:'#4a90d9',investments:'#4ecb8d',lockedsavings:'#f0a040',liquidsavings:'#f07040',liquidity:'#a070d0',credit:'#e05555'};
+  const assetGroups=fin.groups.filter(g=>g.section==='Assets'),ef=s.emergencyFund;
+  const allCards=[
+    {key:'netWorth',html:`<div class="card full"><div class="card-label">Net worth · ${mon} ${fin.asOf.year}</div><div class="card-value">${eur(s.netWorth)}</div></div>`},
+    {key:'exclApt',html:`<div class="card accent"><div class="card-label">Excl. apartment</div><div class="card-value small">${eur(s.exclApt)}</div></div>`},
+    {key:'assets',html:`<div class="card"><div class="card-label">Total assets</div><div class="card-value small pos">${eur(s.assets)}</div></div>`},
+    {key:'liabilities',html:`<div class="card red-card"><div class="card-label">Liabilities</div><div class="card-value small neg">${eur(s.liabilities)}</div></div>`},
+    {key:'debtRatio',html:`<div class="card"><div class="card-label">Debt ratio</div><div class="card-value small">${s.debtRatio}%</div></div>`},
+    {key:'emergencyFund',html:`<div class="card ${ef?.ok?'green':'red-card'}"><div class="card-label">Emergency fund</div><div class="card-value small ${ef?.ok?'ef-ok':'ef-bad'}">${ef?eur(ef.liquid):'—'}</div><div class="card-sub">${ef?ef.covered.toFixed(1)+' mo · target '+ef.target+' mo':''}</div></div>`},
+  ];
+  const visCards=allCards.filter(c=>isCardVisible('fin-balance',c.key));
+  let html=tabs+`<div class="content"><div class="cards">${visCards.map(c=>c.html).join('')}</div><div class="section-head">Breakdown</div><div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:16px"><table class="bal-table">`;
+  for(const g of fin.groups)html+=`<tr class="bal-group-${g.key}"><td style="padding-left:14px">${g.label}</td><td>${eur(g.value)}</td></tr>`;
+  html+=`<tr class="bal-total"><td>Net worth</td><td class="teal">${eur(s.netWorth)}</td></tr></table></div><div class="section-head">Allocation</div><div class="chart-wrap"><div class="pie-wrap"><canvas id="pieChart"></canvas><div class="pie-legend" id="pieLegend"></div></div></div><div class="section-head">History</div><div class="chart-wrap"><div class="chart-title">Net worth over time</div><canvas id="histChart"></canvas></div></div>`;
+  document.getElementById('app').innerHTML=html;
+  const pca=assetGroups.map(g=>pieColors[g.key]||'#4a90d9');
+  charts.pie=new Chart(document.getElementById('pieChart').getContext('2d'),{type:'doughnut',data:{labels:assetGroups.map(g=>g.label),datasets:[{data:assetGroups.map(g=>g.value),backgroundColor:pca,borderWidth:0,hoverOffset:6}]},options:{responsive:true,maintainAspectRatio:true,cutout:'68%',plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>`  ${eur(ctx.parsed)} (${(ctx.parsed/assetGroups.reduce((s,g)=>s+g.value,0)*100).toFixed(1)}%)`}}}}});
+  document.getElementById('pieLegend').innerHTML=assetGroups.map((g,i)=>`<div class="pie-legend-item"><div class="pie-dot" style="background:${pca[i]}"></div><span>${g.label}</span></div>`).join('');
+  const hist=fin.history||[];
+  charts.hist=new Chart(document.getElementById('histChart').getContext('2d'),{type:'line',data:{labels:hist.map(h=>h.year===fin.asOf.year?`${h.year}*`:String(h.year)),datasets:[{label:'Net worth',data:hist.map(h=>h.netWorth),borderColor:'#00b4a0',backgroundColor:'rgba(0,180,160,0.08)',tension:.3,fill:true,pointRadius:3},{label:'Excl. apt',data:hist.map(h=>h.exclApt),borderColor:'#4a90d9',backgroundColor:'transparent',tension:.3,borderDash:[4,3],pointRadius:3}]},options:{responsive:true,maintainAspectRatio:true,...chartDefaults()}});
+}
+
+function renderFinanceProjections(fin,tabs){
+  const TARGET=fin.targetAmount||1000000,proj=fin.projections||[];
+  const hitYear=proj.find(p=>p.projected&&p.exclApt>=TARGET)?.year,latest=proj.filter(p=>!p.projected).slice(-1)[0];
+  const projCards=[
+    {key:'currentExcl',html:`<div class="card"><div class="card-label">Current excl. apt</div><div class="card-value small">${eur(latest?.exclApt)}</div></div>`},
+    {key:'targetYear',html:`<div class="card green"><div class="card-label">€1M target</div><div class="card-value small teal">${hitYear||'—'}</div><div class="card-sub">projected year</div></div>`},
+  ];
+  const visCards=projCards.filter(c=>isCardVisible('fin-proj',c.key));
+  let html=tabs+`<div class="content">${visCards.length?`<div class="cards">${visCards.map(c=>c.html).join('')}</div>`:''}<div class="section-head">Projection chart</div><div class="chart-wrap"><canvas id="projChart"></canvas></div><div class="section-head">Detail</div><div class="proj-table-wrap"><table class="proj-table"><thead><tr><th>Year</th><th>Net worth</th><th>Excl. apt</th></tr></thead><tbody>`;
+  let targetHit=false;
+  for(const p of proj){const isCurrent=!p.projected&&p.year===fin.asOf.year,isHit=p.projected&&p.exclApt>=TARGET&&!targetHit;if(isHit)targetHit=true;const vClass=p.projected?'projected':'',eClass=isHit?'hit':vClass;html+=`<tr class="${isCurrent?'current-row':''}"><td class="${vClass}">${p.year}${isCurrent?'*':''}</td><td class="${vClass}">${eur(p.netWorth)}</td><td class="${eClass}">${eur(p.exclApt)}${isHit?'<span class="target-badge">🎯 1M</span>':''}</td></tr>`;}
+  html+=`</tbody></table></div></div>`;document.getElementById('app').innerHTML=html;
+  const allYears=proj.map(p=>p.year);
+  charts.proj=new Chart(document.getElementById('projChart').getContext('2d'),{type:'line',data:{labels:allYears,datasets:[{label:'Net worth (hist)',data:proj.map(p=>p.projected?null:p.netWorth),borderColor:'#00b4a0',backgroundColor:'rgba(0,180,160,0.06)',fill:true,tension:.3,pointRadius:3,spanGaps:false},{label:'Net worth (proj)',data:proj.map(p=>p.projected?p.netWorth:null),borderColor:'#00b4a0',borderDash:[5,4],backgroundColor:'transparent',tension:.3,pointRadius:2,spanGaps:false},{label:'Excl. apt (hist)',data:proj.map(p=>p.projected?null:p.exclApt),borderColor:'#4a90d9',backgroundColor:'transparent',tension:.3,pointRadius:3,spanGaps:false},{label:'Excl. apt (proj)',data:proj.map(p=>p.projected?p.exclApt:null),borderColor:'#4a90d9',borderDash:[5,4],backgroundColor:'transparent',tension:.3,pointRadius:2,spanGaps:false},{label:'€1M target',data:allYears.map(()=>TARGET),borderColor:'rgba(224,85,85,0.5)',borderDash:[3,3],backgroundColor:'transparent',pointRadius:0}]},options:{responsive:true,maintainAspectRatio:true,...chartDefaults()}});
+}
+
+function renderPortfolio(){
+  const port=snapshot?.portfolio;if(!port){showError();return;}
+  const tabs=`<div class="subtabs"><button class="subtab ${currentPortfolioTab==='portfolio'?'active':''}" onclick="showPortfolioTab('portfolio')">Portfolio</button><button class="subtab ${currentPortfolioTab==='projections'?'active':''}" onclick="showPortfolioTab('projections')">Projections</button></div>`;
+  currentPortfolioTab==='portfolio'?renderPortfolioTab(port,tabs):renderPortfolioProjections(port,tabs);
+}
+
+function renderPortfolioTab(port,tabs){
+  const s=port.summary,palette=['#00b4a0','#4a90d9','#f0a040','#a070d0','#f07040','#4ecb8d','#e05555','#60b0f0','#8fa8c8'];
+  const top8=[...port.positions].slice(0,8),otherVal=s.totalValue-top8.reduce((t,p)=>t+p.value,0);
+  const pieLabels=[...top8.map(p=>p.stock),'Other'],pieData=[...top8.map(p=>p.value),otherVal];
+  const portCards=[
+    {key:'totalValue',html:`<div class="card full"><div class="card-label">Total value</div><div class="card-value">${eur(s.totalValue)}</div></div>`},
+    {key:'totalGain',html:`<div class="card ${s.totalGain>=0?'green':''}"><div class="card-label">Total gain</div><div class="card-value small ${gainClass(s.totalGain)}">${eur(s.totalGain)}</div><div class="card-sub ${gainClass(s.totalGainPct)}">${pct(s.totalGainPct)}</div></div>`},
+    {key:'totalCost',html:`<div class="card"><div class="card-label">Cost basis</div><div class="card-value small">${eur(s.totalCost)}</div></div>`},
+  ];
+  const visCards=portCards.filter(c=>isCardVisible('port',c.key));
+  let html=tabs+`<div class="content">${visCards.length?`<div class="cards">${visCards.map(c=>c.html).join('')}</div>`:''}<div class="section-head">Allocation</div><div class="chart-wrap"><div class="pie-wrap"><canvas id="portPie"></canvas><div class="pie-legend" id="portLegend"></div></div></div><div class="section-head">Holdings</div><div class="port-table-wrap"><table class="port-table"><thead><tr><th>Stock</th><th>Shares</th><th>Price</th><th>Value</th><th>Gain%</th><th>Yield</th></tr></thead><tbody>`;
+  for(const p of port.positions)html+=`<tr><td><span class="stock-name" title="${p.stock}">${p.stock}</span><span class="stock-broker">${p.brokers}</span></td><td>${p.shares}</td><td>${eur(p.price,2)}</td><td>${eur(p.value)}</td><td class="${gainClass(p.gain)}">${pct(p.gainPct)}</td><td class="teal">${p.yieldPct>0?p.yieldPct.toFixed(1)+'%':'—'}</td></tr>`;
+  html+=`</tbody></table></div></div>`;document.getElementById('app').innerHTML=html;
+  charts.portPie=new Chart(document.getElementById('portPie').getContext('2d'),{type:'doughnut',data:{labels:pieLabels,datasets:[{data:pieData,backgroundColor:palette,borderWidth:0,hoverOffset:6}]},options:{responsive:true,maintainAspectRatio:true,cutout:'68%',plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>`  ${eur(ctx.parsed)} (${(ctx.parsed/s.totalValue*100).toFixed(1)}%)`}}}}});
+  document.getElementById('portLegend').innerHTML=pieLabels.map((l,i)=>`<div class="pie-legend-item"><div class="pie-dot" style="background:${palette[i]}"></div><span>${l}</span></div>`).join('');
+}
+
+function renderPortfolioProjections(port,tabs){
+  const proj=port.projections||{},now=new Date(),cYear=now.getFullYear(),cMon=now.getMonth();
+  const rate=proj.valueGrowthRate||.12,deposit=proj.monthlyDeposit||300,divRate=proj.divGrowthRate||.10,endYear=parseInt((proj.endDate||'2040-12').split('-')[0]),mRate=Math.pow(1+rate,1/12)-1;
+  let value=port.summary.totalValue,cost=port.summary.totalCost;const points=[];
+  for(let y=cYear;y<=endYear;y++){const months=y===cYear?12-cMon:12;for(let m=0;m<months;m++){value=value*(1+mRate)+deposit;cost+=deposit;}points.push({year:y,value:Math.round(value),cost:Math.round(cost),gain:Math.round(value-cost)});}
+  const p2030=points.find(p=>p.year===2030)||points.slice(-1)[0],p2035=points.find(p=>p.year===2035)||points.slice(-1)[0],pEnd=points.slice(-1)[0],milestoneYear=points.find(p=>p.value>=1000000)?.year;
+  const projCards=[
+    {key:'p2030',html:`<div class="card"><div class="card-label">2030</div><div class="card-value small teal">${eurK(p2030?.value||0)}</div></div>`},
+    {key:'p2035',html:`<div class="card"><div class="card-label">2035</div><div class="card-value small teal">${eurK(p2035?.value||0)}</div></div>`},
+    {key:'pEnd',html:`<div class="card full"><div class="card-label">${endYear} (end)</div><div class="card-value">${eur(pEnd?.value||0)}</div><div class="card-sub">gain ${eur(pEnd?.gain||0)}</div></div>`},
+    {key:'milestone',html:milestoneYear?`<div class="card full" style="background:rgba(78,203,141,0.08);border:1px solid rgba(78,203,141,0.3)"><div class="card-label">€1M milestone</div><div class="card-value teal">${milestoneYear}</div></div>`:''},
+  ];
+  const visCards=projCards.filter(c=>isCardVisible('port-proj',c.key)&&c.html);
+  let html=tabs+`<div class="content">${visCards.length?`<div class="cards">${visCards.map(c=>c.html).join('')}</div>`:''}<div class="section-head">Assumptions</div><div class="chart-wrap" style="margin-bottom:16px"><table style="width:100%;font-size:.72rem;border-collapse:collapse"><tr><td style="color:var(--text3);padding:5px 0">Growth rate / yr</td><td style="text-align:right">${(rate*100).toFixed(1)}%</td></tr><tr><td style="color:var(--text3);padding:5px 0">Monthly deposit</td><td style="text-align:right">${eur(deposit)}</td></tr><tr><td style="color:var(--text3);padding:5px 0">Dividend CAGR</td><td style="text-align:right">${(divRate*100).toFixed(1)}%</td></tr><tr><td style="color:var(--text3);padding:5px 0">End date</td><td style="text-align:right">${proj.endDate||'2040-12'}</td></tr></table></div><div class="section-head">Projection chart</div><div class="chart-wrap"><canvas id="portProjChart"></canvas></div></div>`;
+  document.getElementById('app').innerHTML=html;
+  charts.portProj=new Chart(document.getElementById('portProjChart').getContext('2d'),{type:'line',data:{labels:points.map(p=>p.year),datasets:[{label:'Value',data:points.map(p=>p.value),borderColor:'#00b4a0',backgroundColor:'rgba(0,180,160,0.08)',fill:true,tension:.3,pointRadius:2},{label:'Cost',data:points.map(p=>p.cost),borderColor:'#4a90d9',backgroundColor:'transparent',tension:.3,pointRadius:2},{label:'Gain',data:points.map(p=>p.gain),borderColor:'#4ecb8d',backgroundColor:'transparent',tension:.3,pointRadius:2,borderDash:[4,3]}]},options:{responsive:true,maintainAspectRatio:true,...chartDefaults()}});
+}
+
+function showError(){document.getElementById('app').innerHTML=`<div class="content"><div class="error-msg">No data available.</div></div>`;}
+
+loadPrefs();
+if(getPref('lightMode',false))document.documentElement.classList.add('light');
+const defaultSection=getPref('defaultTab','finance');
+currentSection=defaultSection;
+document.querySelectorAll('.nav-tab').forEach((t,i)=>t.classList.toggle('active',(i===0&&defaultSection==='finance')||(i===1&&defaultSection==='portfolio')));
+loadData();
+</script>
+</body>
+</html>
