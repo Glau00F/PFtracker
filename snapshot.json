@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-05-24T10:59:32.779Z",
+  "exportedAt": "2026-05-24T11:01:05.494Z",
   "finance": {
     "asOf": {
       "year": 2026,
@@ -218,10 +218,10 @@
   },
   "portfolio": {
     "summary": {
-      "totalValue": 142688,
-      "totalCost": 99145,
-      "totalGain": 43543,
-      "totalGainPct": 43.9
+      "totalValue": 163488,
+      "totalCost": 121655,
+      "totalGain": 41833,
+      "totalGainPct": 34.4
     },
     "positions": [
       {
@@ -235,6 +235,18 @@
         "gain": 17634,
         "gainPct": 150.1,
         "yieldPct": 20.6
+      },
+      {
+        "stock": "Mapfre",
+        "ticker": "MAP.MC",
+        "brokers": "Broker ING",
+        "shares": 5640,
+        "price": 4.16,
+        "value": 23462,
+        "cost": 24091,
+        "gain": -628,
+        "gainPct": -2.6,
+        "yieldPct": 1.9
       },
       {
         "stock": "KeyCorp",
@@ -450,18 +462,6 @@
         "cost": 2196,
         "gain": 468,
         "gainPct": 21.3,
-        "yieldPct": 1.9
-      },
-      {
-        "stock": "Mapfre",
-        "ticker": "MAP.MC",
-        "brokers": "Broker ING",
-        "shares": 640,
-        "price": 4.16,
-        "value": 2662,
-        "cost": 1581,
-        "gain": 1082,
-        "gainPct": 68.4,
         "yieldPct": 1.9
       },
       {
