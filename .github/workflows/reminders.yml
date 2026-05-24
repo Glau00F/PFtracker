@@ -18,6 +18,7 @@ jobs:
         run: |
           node - << 'EOF'
           const nodemailer = require('nodemailer');
+          (async () => {
 
           // ── Schedule (key=period, values=amounts per account) ──────────────
           const SCHEDULE = [
@@ -255,4 +256,5 @@ jobs:
           });
 
           console.log('Email sent:', subject);
+          })();
           EOF
