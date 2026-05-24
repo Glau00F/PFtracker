@@ -157,10 +157,8 @@ jobs:
 
           // We check: is today the reminder date for any transfer?
           // Reminder dates relative to current month's transfer date:
-          //   day=1 → remind last day of prev month
-          //   day=2 → remind on the 1st
-          //   day=10 → remind on the 8th
-          //   day=lastWed → remind 2 days before last Wednesday
+          // Always 2 days before the transfer date.
+          // For day<=2 the reminder falls in the previous month.
 
           const reminders = [];
 
@@ -170,26 +168,23 @@ jobs:
 
             let isReminderDay = false;
 
-            if (t.day === 1) {
-              // Reminder: last day of previous month
-              const lastDayPrevMonth = new Date(todayYear, todayMonth - 1, 0).getDate();
-              const prevMonth = todayMonth === 1 ? 12 : todayMonth - 1;
-              const prevYear  = todayMonth === 1 ? todayYear - 1 : todayYear;
-              if (todayDay === lastDayPrevMonth) {
-                isReminderDay = true;
-                transferYear  = todayMonth;  // transfer is in current month
-                transferMonth = todayMonth;
-              }
-            } else if (t.day === 2) {
-              // Reminder: 1st of the month
-              if (todayDay === 1) isReminderDay = true;
-            } else if (t.day === 10) {
-              // Reminder: 8th
-              if (todayDay === 8) isReminderDay = true;
-            } else if (t.day === 'lastWed') {
-              // Reminder: lastWed - 2
+            if (t.day === 'lastWed') {
               const lw = getLastWed(todayYear, todayMonth);
               if (todayDay === lw - 2) isReminderDay = true;
+            } else if (t.day <= 2) {
+              // Reminder falls in previous month: last day of prev month - (2 - t.day)
+              const prevMonth = todayMonth === 1 ? 12 : todayMonth - 1;
+              const prevYear  = todayMonth === 1 ? todayYear - 1 : todayYear;
+              const lastDay   = new Date(prevYear, prevMonth, 0).getDate();
+              const remDay    = lastDay - (2 - t.day);
+              if (todayDay === remDay) {
+                isReminderDay = true;
+                // Transfer is next month
+                transferMonth = todayMonth;
+                transferYear  = todayYear;
+              }
+            } else {
+              if (todayDay === t.day - 2) isReminderDay = true;
             }
 
             if (!isReminderDay) continue;
