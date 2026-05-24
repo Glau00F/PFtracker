@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-05-24T10:31:40.068Z",
+  "exportedAt": "2026-05-24T10:41:38.944Z",
   "finance": {
     "asOf": {
       "year": 2026,
@@ -218,10 +218,10 @@
   },
   "portfolio": {
     "summary": {
-      "totalValue": 142510,
-      "totalCost": 99145,
-      "totalGain": 43365,
-      "totalGainPct": 43.7
+      "totalValue": 162085,
+      "totalCost": 118155,
+      "totalGain": 43930,
+      "totalGainPct": 37.2
     },
     "positions": [
       {
@@ -235,6 +235,18 @@
         "gain": 17634,
         "gainPct": 150.1,
         "yieldPct": 20.6
+      },
+      {
+        "stock": "Iberdrola",
+        "ticker": "IBE.MC",
+        "brokers": "Broker ING",
+        "shares": 1178,
+        "price": 19.58,
+        "value": 23059,
+        "cost": 21781,
+        "gain": 1278,
+        "gainPct": 5.9,
+        "yieldPct": 2.4
       },
       {
         "stock": "KeyCorp",
@@ -295,18 +307,6 @@
         "gain": 1179,
         "gainPct": 48.3,
         "yieldPct": 2.5
-      },
-      {
-        "stock": "Iberdrola",
-        "ticker": "IBE.MC",
-        "brokers": "Broker ING",
-        "shares": 178,
-        "price": 19.58,
-        "value": 3484,
-        "cost": 2771,
-        "gain": 713,
-        "gainPct": 25.7,
-        "yieldPct": 2.4
       },
       {
         "stock": "ACS",
