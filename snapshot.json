@@ -1,18 +1,18 @@
 {
-  "exportedAt": "2026-05-24T08:03:34.378Z",
+  "exportedAt": "2026-05-24T09:59:16.023Z",
   "finance": {
     "asOf": {
       "year": 2026,
       "month": 5
     },
     "summary": {
-      "assets": 617711,
+      "assets": 617714,
       "liabilities": 0,
-      "netWorth": 617711,
-      "exclApt": 337711,
+      "netWorth": 617714,
+      "exclApt": 337714,
       "debtRatio": 0,
       "emergencyFund": {
-        "liquid": 20810,
+        "liquid": 20813,
         "covered": 7.6,
         "target": 8,
         "targetAmount": 22010,
@@ -42,7 +42,7 @@
         "key": "liquidsavings",
         "label": "Liquid savings",
         "section": "Assets",
-        "value": 20810
+        "value": 20813
       },
       {
         "key": "liquidity",
@@ -91,8 +91,8 @@
       {
         "year": 2026,
         "month": 5,
-        "netWorth": 617711,
-        "exclApt": 337711
+        "netWorth": 617714,
+        "exclApt": 337714
       }
     ],
     "projections": [
@@ -130,80 +130,80 @@
         "year": 2026,
         "month": 5,
         "projected": false,
-        "netWorth": 617711,
-        "exclApt": 337711
+        "netWorth": 617714,
+        "exclApt": 337714
       },
       {
         "year": 2026,
         "projected": true,
-        "netWorth": 651624,
-        "exclApt": 353268
+        "netWorth": 651627,
+        "exclApt": 353271
       },
       {
         "year": 2027,
         "projected": true,
-        "netWorth": 714364,
-        "exclApt": 381697
+        "netWorth": 714368,
+        "exclApt": 381700
       },
       {
         "year": 2028,
         "projected": true,
-        "netWorth": 783438,
-        "exclApt": 412514
+        "netWorth": 783442,
+        "exclApt": 412518
       },
       {
         "year": 2029,
         "projected": true,
-        "netWorth": 859503,
-        "exclApt": 445923
+        "netWorth": 859506,
+        "exclApt": 445926
       },
       {
         "year": 2030,
         "projected": true,
-        "netWorth": 943286,
-        "exclApt": 482144
+        "netWorth": 943289,
+        "exclApt": 482147
       },
       {
         "year": 2031,
         "projected": true,
-        "netWorth": 1035591,
-        "exclApt": 521418
+        "netWorth": 1035594,
+        "exclApt": 521421
       },
       {
         "year": 2032,
         "projected": true,
-        "netWorth": 1137308,
-        "exclApt": 564005
+        "netWorth": 1137312,
+        "exclApt": 564009
       },
       {
         "year": 2033,
         "projected": true,
-        "netWorth": 1249423,
-        "exclApt": 610190
+        "netWorth": 1249427,
+        "exclApt": 610194
       },
       {
         "year": 2034,
         "projected": true,
-        "netWorth": 1373025,
-        "exclApt": 660281
+        "netWorth": 1373029,
+        "exclApt": 660284
       },
       {
         "year": 2035,
         "projected": true,
-        "netWorth": 1509321,
-        "exclApt": 714610
+        "netWorth": 1509325,
+        "exclApt": 714614
       },
       {
         "year": 2036,
         "projected": true,
-        "netWorth": 1659645,
-        "exclApt": 773543
+        "netWorth": 1659649,
+        "exclApt": 773547
       },
       {
         "year": 2037,
         "projected": true,
-        "netWorth": 1825477,
-        "exclApt": 837473
+        "netWorth": 1825481,
+        "exclApt": 837478
       }
     ],
     "projAssumptions": {
@@ -218,10 +218,10 @@
   },
   "portfolio": {
     "summary": {
-      "totalValue": 142510,
+      "totalValue": 139215,
       "totalCost": 99145,
-      "totalGain": 43365,
-      "totalGainPct": 43.7
+      "totalGain": 40070,
+      "totalGainPct": 40.4
     },
     "positions": [
       {
@@ -234,7 +234,7 @@
         "cost": 11746,
         "gain": 17634,
         "gainPct": 150.1,
-        "yieldPct": 20.5
+        "yieldPct": 20.6
       },
       {
         "stock": "KeyCorp",
@@ -294,7 +294,7 @@
         "cost": 2440,
         "gain": 1179,
         "gainPct": 48.3,
-        "yieldPct": 2.6
+        "yieldPct": 2.5
       },
       {
         "stock": "Iberdrola",
@@ -330,19 +330,7 @@
         "cost": 1491,
         "gain": 1966,
         "gainPct": 131.9,
-        "yieldPct": 2.5
-      },
-      {
-        "stock": "Repsol",
-        "ticker": "REP.MC",
-        "brokers": "Broker ING",
-        "shares": 148,
-        "price": 22.26,
-        "value": 3294,
-        "cost": 1486,
-        "gain": 1809,
-        "gainPct": 121.8,
-        "yieldPct": 2.3
+        "yieldPct": 2.4
       },
       {
         "stock": "EPR Properties",
@@ -630,7 +618,7 @@
         "cost": 2442,
         "gain": -387,
         "gainPct": -15.8,
-        "yieldPct": 1.4
+        "yieldPct": 1.5
       },
       {
         "stock": "Main Street Capital",
@@ -775,6 +763,18 @@
         "gain": -28,
         "gainPct": -13.9,
         "yieldPct": 0.1
+      },
+      {
+        "stock": "Repsol",
+        "ticker": "REP.MC",
+        "brokers": "Broker ING",
+        "shares": 148,
+        "price": 0,
+        "value": 0,
+        "cost": 1486,
+        "gain": -1486,
+        "gainPct": -100,
+        "yieldPct": 2.3
       }
     ],
     "projections": {
