@@ -173,15 +173,13 @@ jobs:
               if (todayDay === lw - 2) isReminderDay = true;
             } else if (t.day <= 2) {
               // Reminder falls in previous month: last day of prev month - (2 - t.day)
-              const prevMonth = todayMonth === 1 ? 12 : todayMonth - 1;
-              const prevYear  = todayMonth === 1 ? todayYear - 1 : todayYear;
-              const lastDay   = new Date(prevYear, prevMonth, 0).getDate();
-              const remDay    = lastDay - (2 - t.day);
+              const lastDay = new Date(todayYear, todayMonth, 0).getDate();
+              const remDay  = lastDay - (2 - t.day);
               if (todayDay === remDay) {
                 isReminderDay = true;
                 // Transfer is next month
-                transferMonth = todayMonth;
-                transferYear  = todayYear;
+                transferMonth = todayMonth === 12 ? 1 : todayMonth + 1;
+                transferYear  = todayMonth === 12 ? todayYear + 1 : todayYear;
               }
             } else {
               if (todayDay === t.day - 2) isReminderDay = true;
