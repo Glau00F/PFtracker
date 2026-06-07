@@ -1,21 +1,21 @@
 {
-  "exportedAt": "2026-06-06T08:03:38.672Z",
+  "exportedAt": "2026-06-07T08:14:55.005Z",
   "finance": {
     "asOf": {
       "year": 2026,
       "month": 6
     },
     "summary": {
-      "assets": 622430,
+      "assets": 622378,
       "liabilities": 0,
-      "netWorth": 622430,
-      "exclApt": 342430,
+      "netWorth": 622378,
+      "exclApt": 342378,
       "debtRatio": 0,
       "emergencyFund": {
         "liquid": 21688,
         "covered": 8,
         "target": 9,
-        "targetAmount": 24389,
+        "targetAmount": 24409,
         "ok": false
       }
     },
@@ -30,7 +30,7 @@
         "key": "investments",
         "label": "Investments",
         "section": "Assets",
-        "value": 145086
+        "value": 145062
       },
       {
         "key": "lockedsavings",
@@ -48,7 +48,7 @@
         "key": "liquidity",
         "label": "Liquidity",
         "section": "Assets",
-        "value": 8916
+        "value": 8888
       },
       {
         "key": "credit",
@@ -91,8 +91,8 @@
       {
         "year": 2026,
         "month": 6,
-        "netWorth": 622430,
-        "exclApt": 342430
+        "netWorth": 622378,
+        "exclApt": 342378
       }
     ],
     "projections": [
@@ -130,80 +130,80 @@
         "year": 2026,
         "month": 6,
         "projected": false,
-        "netWorth": 622430,
-        "exclApt": 342430
+        "netWorth": 622378,
+        "exclApt": 342378
       },
       {
         "year": 2026,
         "projected": true,
-        "netWorth": 653217,
-        "exclApt": 357555
+        "netWorth": 653164,
+        "exclApt": 357502
       },
       {
         "year": 2027,
         "projected": true,
-        "netWorth": 719739,
-        "exclApt": 390076
+        "netWorth": 719684,
+        "exclApt": 390021
       },
       {
         "year": 2028,
         "projected": true,
-        "netWorth": 793471,
-        "exclApt": 425897
+        "netWorth": 793414,
+        "exclApt": 425839
       },
       {
         "year": 2029,
         "projected": true,
-        "netWorth": 875220,
-        "exclApt": 465375
+        "netWorth": 875160,
+        "exclApt": 465315
       },
       {
         "year": 2030,
         "projected": true,
-        "netWorth": 965885,
-        "exclApt": 508907
+        "netWorth": 965822,
+        "exclApt": 508844
       },
       {
         "year": 2031,
         "projected": true,
-        "netWorth": 1066466,
-        "exclApt": 556936
+        "netWorth": 1066400,
+        "exclApt": 556870
       },
       {
         "year": 2032,
         "projected": true,
-        "netWorth": 1178079,
-        "exclApt": 609953
+        "netWorth": 1178009,
+        "exclApt": 609883
       },
       {
         "year": 2033,
         "projected": true,
-        "netWorth": 1301967,
-        "exclApt": 668506
+        "netWorth": 1301894,
+        "exclApt": 668434
       },
       {
         "year": 2034,
         "projected": true,
-        "netWorth": 1439515,
-        "exclApt": 733206
+        "netWorth": 1439439,
+        "exclApt": 733131
       },
       {
         "year": 2035,
         "projected": true,
-        "netWorth": 1592267,
-        "exclApt": 804734
+        "netWorth": 1592188,
+        "exclApt": 804654
       },
       {
         "year": 2036,
         "projected": true,
-        "netWorth": 1761945,
-        "exclApt": 883845
+        "netWorth": 1761862,
+        "exclApt": 883762
       },
       {
         "year": 2037,
         "projected": true,
-        "netWorth": 1950467,
-        "exclApt": 971385
+        "netWorth": 1950380,
+        "exclApt": 971298
       }
     ],
     "projAssumptions": {
@@ -270,7 +270,7 @@
         "cost": 2007,
         "gain": 2590,
         "gainPct": 129,
-        "yieldPct": 3.3
+        "yieldPct": 3.2
       },
       {
         "stock": "Johnson & Johnson",
@@ -342,7 +342,7 @@
         "cost": 1491,
         "gain": 1924,
         "gainPct": 129.1,
-        "yieldPct": 2.5
+        "yieldPct": 2.4
       },
       {
         "stock": "Merlin Properties",
@@ -366,7 +366,7 @@
         "cost": 2771,
         "gain": 463,
         "gainPct": 16.7,
-        "yieldPct": 2.2
+        "yieldPct": 2.3
       },
       {
         "stock": "Realty Income",
@@ -378,7 +378,7 @@
         "cost": 3125,
         "gain": 95,
         "gainPct": 3,
-        "yieldPct": 2.2
+        "yieldPct": 2.3
       },
       {
         "stock": "Hershey",
@@ -402,7 +402,7 @@
         "cost": 2073,
         "gain": 690,
         "gainPct": 33.3,
-        "yieldPct": 1.9
+        "yieldPct": 2
       },
       {
         "stock": "ING",
@@ -702,7 +702,7 @@
         "cost": 2406,
         "gain": -928,
         "gainPct": -38.6,
-        "yieldPct": 1
+        "yieldPct": 1.1
       },
       {
         "stock": "ASML",
