@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-06-13T08:12:29.729Z",
+  "exportedAt": "2026-06-14T08:03:58.091Z",
   "finance": {
     "asOf": {
       "year": 2026,
@@ -234,7 +234,7 @@
         "cost": 11746,
         "gain": 17695,
         "gainPct": 150.7,
-        "yieldPct": 20.3
+        "yieldPct": 20.2
       },
       {
         "stock": "KeyCorp",
@@ -246,7 +246,7 @@
         "cost": 3434,
         "gain": 2059,
         "gainPct": 60,
-        "yieldPct": 3.7
+        "yieldPct": 3.8
       },
       {
         "stock": "McDonald's",
@@ -342,7 +342,7 @@
         "cost": 1486,
         "gain": 1877,
         "gainPct": 126.3,
-        "yieldPct": 2.4
+        "yieldPct": 2.3
       },
       {
         "stock": "EPR Properties",
@@ -402,7 +402,7 @@
         "cost": 2073,
         "gain": 781,
         "gainPct": 37.7,
-        "yieldPct": 1.9
+        "yieldPct": 2
       },
       {
         "stock": "Logista",
@@ -438,7 +438,7 @@
         "cost": 1482,
         "gain": 1193,
         "gainPct": 80.5,
-        "yieldPct": 1.9
+        "yieldPct": 1.8
       },
       {
         "stock": "ING",
@@ -486,7 +486,7 @@
         "cost": 895,
         "gain": 1645,
         "gainPct": 183.7,
-        "yieldPct": 1.8
+        "yieldPct": 1.7
       },
       {
         "stock": "National Grid",
@@ -582,7 +582,7 @@
         "cost": 1516,
         "gain": 701,
         "gainPct": 46.2,
-        "yieldPct": 1.6
+        "yieldPct": 1.5
       },
       {
         "stock": "Sainsbury",
@@ -654,7 +654,7 @@
         "cost": 1653,
         "gain": 315,
         "gainPct": 19,
-        "yieldPct": 1.3
+        "yieldPct": 1.4
       },
       {
         "stock": "Viscofan",
@@ -666,7 +666,7 @@
         "cost": 1684,
         "gain": -32,
         "gainPct": -1.9,
-        "yieldPct": 1.2
+        "yieldPct": 1.1
       },
       {
         "stock": "3M",
@@ -738,7 +738,7 @@
         "cost": 2282,
         "gain": -1042,
         "gainPct": -45.7,
-        "yieldPct": 0.8
+        "yieldPct": 0.9
       },
       {
         "stock": "Ebro Foods",
