@@ -1,21 +1,21 @@
 {
-  "exportedAt": "2026-06-20T08:08:02.400Z",
+  "exportedAt": "2026-06-21T08:00:07.000Z",
   "finance": {
     "asOf": {
       "year": 2026,
       "month": 6
     },
     "summary": {
-      "assets": 633089,
+      "assets": 633066,
       "liabilities": 0,
-      "netWorth": 633089,
-      "exclApt": 349089,
+      "netWorth": 633066,
+      "exclApt": 349066,
       "debtRatio": 0,
       "emergencyFund": {
-        "liquid": 22906,
-        "covered": 8.4,
+        "liquid": 17638,
+        "covered": 6.5,
         "target": 9,
-        "targetAmount": 24488,
+        "targetAmount": 24510,
         "ok": false
       }
     },
@@ -48,7 +48,7 @@
         "key": "liquidity",
         "label": "Liquidity",
         "section": "Assets",
-        "value": 7469
+        "value": 7446
       },
       {
         "key": "credit",
@@ -91,8 +91,8 @@
       {
         "year": 2026,
         "month": 6,
-        "netWorth": 633089,
-        "exclApt": 349089
+        "netWorth": 633066,
+        "exclApt": 349066
       }
     ],
     "projections": [
@@ -130,80 +130,80 @@
         "year": 2026,
         "month": 6,
         "projected": false,
-        "netWorth": 633089,
-        "exclApt": 349089
+        "netWorth": 633066,
+        "exclApt": 349066
       },
       {
         "year": 2026,
         "projected": true,
-        "netWorth": 664388,
-        "exclApt": 364502
+        "netWorth": 664364,
+        "exclApt": 364479
       },
       {
         "year": 2027,
         "projected": true,
-        "netWorth": 732011,
-        "exclApt": 397638
+        "netWorth": 731987,
+        "exclApt": 397614
       },
       {
         "year": 2028,
         "projected": true,
-        "netWorth": 806955,
-        "exclApt": 434129
+        "netWorth": 806931,
+        "exclApt": 434105
       },
       {
         "year": 2029,
         "projected": true,
-        "netWorth": 890039,
-        "exclApt": 474339
+        "netWorth": 890015,
+        "exclApt": 474314
       },
       {
         "year": 2030,
         "projected": true,
-        "netWorth": 982175,
-        "exclApt": 518669
+        "netWorth": 982150,
+        "exclApt": 518644
       },
       {
         "year": 2031,
         "projected": true,
-        "netWorth": 1084379,
-        "exclApt": 567570
+        "netWorth": 1084353,
+        "exclApt": 567544
       },
       {
         "year": 2032,
         "projected": true,
-        "netWorth": 1197782,
-        "exclApt": 621539
+        "netWorth": 1197755,
+        "exclApt": 621513
       },
       {
         "year": 2033,
         "projected": true,
-        "netWorth": 1323644,
-        "exclApt": 681134
+        "netWorth": 1323618,
+        "exclApt": 681108
       },
       {
         "year": 2034,
         "projected": true,
-        "netWorth": 1463372,
-        "exclApt": 746974
+        "netWorth": 1463345,
+        "exclApt": 746947
       },
       {
         "year": 2035,
         "projected": true,
-        "netWorth": 1618532,
-        "exclApt": 819747
+        "netWorth": 1618504,
+        "exclApt": 819720
       },
       {
         "year": 2036,
         "projected": true,
-        "netWorth": 1790868,
-        "exclApt": 900224
+        "netWorth": 1790840,
+        "exclApt": 900195
       },
       {
         "year": 2037,
         "projected": true,
-        "netWorth": 1982328,
-        "exclApt": 989259
+        "netWorth": 1982299,
+        "exclApt": 989230
       }
     ],
     "projAssumptions": {
@@ -234,7 +234,7 @@
         "cost": 8971,
         "gain": 14330,
         "gainPct": 159.7,
-        "yieldPct": 16
+        "yieldPct": 16.1
       },
       {
         "stock": "KeyCorp",
@@ -258,7 +258,7 @@
         "cost": 2007,
         "gain": 2982,
         "gainPct": 148.6,
-        "yieldPct": 3.4
+        "yieldPct": 3.5
       },
       {
         "stock": "McDonald's",
@@ -354,7 +354,7 @@
         "cost": 2771,
         "gain": 488,
         "gainPct": 17.6,
-        "yieldPct": 2.3
+        "yieldPct": 2.2
       },
       {
         "stock": "Realty Income",
@@ -642,7 +642,7 @@
         "cost": 2077,
         "gain": -1,
         "gainPct": -0.1,
-        "yieldPct": 1.5
+        "yieldPct": 1.4
       },
       {
         "stock": "Rio Tinto",
