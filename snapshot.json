@@ -1,21 +1,21 @@
 {
-  "exportedAt": "2026-08-01T17:00:02.785Z",
+  "exportedAt": "2026-08-04T08:01:37.569Z",
   "finance": {
     "asOf": {
       "year": 2026,
       "month": 8
     },
     "summary": {
-      "assets": 666149,
+      "assets": 665891,
       "liabilities": 0,
-      "netWorth": 666149,
-      "exclApt": 360149,
+      "netWorth": 665891,
+      "exclApt": 359891,
       "debtRatio": 0,
       "emergencyFund": {
-        "liquid": 24471,
-        "covered": 8.2,
+        "liquid": 24583,
+        "covered": 8.7,
         "target": 9,
-        "targetAmount": 26715,
+        "targetAmount": 25340,
         "ok": false
       }
     },
@@ -30,25 +30,25 @@
         "key": "investments",
         "label": "Investments",
         "section": "Assets",
-        "value": 158858
+        "value": 158838
       },
       {
         "key": "lockedsavings",
         "label": "Locked savings",
         "section": "Assets",
-        "value": 170656
+        "value": 170683
       },
       {
         "key": "liquidsavings",
         "label": "Liquid savings",
         "section": "Assets",
-        "value": 24471
+        "value": 24583
       },
       {
         "key": "liquidity",
         "label": "Liquidity",
         "section": "Assets",
-        "value": 6165
+        "value": 5787
       },
       {
         "key": "credit",
@@ -91,8 +91,8 @@
       {
         "year": 2026,
         "month": 8,
-        "netWorth": 666149,
-        "exclApt": 360149
+        "netWorth": 665891,
+        "exclApt": 359891
       }
     ],
     "projections": [
@@ -130,80 +130,80 @@
         "year": 2026,
         "month": 8,
         "projected": false,
-        "netWorth": 666149,
-        "exclApt": 360149
+        "netWorth": 665891,
+        "exclApt": 359891
       },
       {
         "year": 2026,
         "projected": true,
-        "netWorth": 687933,
-        "exclApt": 370626
+        "netWorth": 687673,
+        "exclApt": 370366
       },
       {
         "year": 2027,
         "projected": true,
-        "netWorth": 757930,
-        "exclApt": 404132
+        "netWorth": 757668,
+        "exclApt": 403870
       },
       {
         "year": 2028,
         "projected": true,
-        "netWorth": 835495,
-        "exclApt": 441011
+        "netWorth": 835232,
+        "exclApt": 440748
       },
       {
         "year": 2029,
         "projected": true,
-        "netWorth": 921476,
-        "exclApt": 481626
+        "netWorth": 921211,
+        "exclApt": 481361
       },
       {
         "year": 2030,
         "projected": true,
-        "netWorth": 1016813,
-        "exclApt": 526380
+        "netWorth": 1016546,
+        "exclApt": 526113
       },
       {
         "year": 2031,
         "projected": true,
-        "netWorth": 1122554,
-        "exclApt": 575722
+        "netWorth": 1122286,
+        "exclApt": 575454
       },
       {
         "year": 2032,
         "projected": true,
-        "netWorth": 1239868,
-        "exclApt": 630150
+        "netWorth": 1239600,
+        "exclApt": 629882
       },
       {
         "year": 2033,
         "projected": true,
-        "netWorth": 1370057,
-        "exclApt": 690222
+        "netWorth": 1369789,
+        "exclApt": 689954
       },
       {
         "year": 2034,
         "projected": true,
-        "netWorth": 1514571,
-        "exclApt": 756555
+        "netWorth": 1514303,
+        "exclApt": 756287
       },
       {
         "year": 2035,
         "projected": true,
-        "netWorth": 1675026,
-        "exclApt": 829838
+        "netWorth": 1674760,
+        "exclApt": 829572
       },
       {
         "year": 2036,
         "projected": true,
-        "netWorth": 1853224,
-        "exclApt": 910839
+        "netWorth": 1852960,
+        "exclApt": 910575
       },
       {
         "year": 2037,
         "projected": true,
-        "netWorth": 2051172,
-        "exclApt": 1000413
+        "netWorth": 2050911,
+        "exclApt": 1000152
       }
     ],
     "projAssumptions": {
