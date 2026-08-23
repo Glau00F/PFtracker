@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-08-22T17:00:01.099Z",
+  "exportedAt": "2026-08-23T11:00:01.524Z",
   "finance": {
     "asOf": {
       "year": 2026,
@@ -13,9 +13,9 @@
       "debtRatio": 0,
       "emergencyFund": {
         "liquid": 24819,
-        "covered": 8.6,
+        "covered": 8.5,
         "target": 9,
-        "targetAmount": 25975,
+        "targetAmount": 26139,
         "ok": false
       }
     },
