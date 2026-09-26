@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-09-26T11:00:03.058Z",
+  "exportedAt": "2026-09-26T17:00:02.990Z",
   "finance": {
     "asOf": {
       "year": 2026,
@@ -15,7 +15,7 @@
         "liquid": 25676,
         "covered": 8.5,
         "target": 9,
-        "targetAmount": 27096,
+        "targetAmount": 27126,
         "ok": false
       }
     },
@@ -218,9 +218,9 @@
   },
   "portfolio": {
     "summary": {
-      "totalValue": 152476,
+      "totalValue": 152472,
       "totalCost": 107271,
-      "totalGain": 45205,
+      "totalGain": 45201,
       "totalGainPct": 42.1
     },
     "positions": [
@@ -268,7 +268,7 @@
         "price": 49.85,
         "value": 4985,
         "cost": 4688,
-        "gain": 298,
+        "gain": 297,
         "gainPct": 6.3,
         "yieldPct": 0
       },
@@ -277,7 +277,7 @@
         "ticker": "JNJ",
         "brokers": "Degiro",
         "shares": 20,
-        "price": 237.91,
+        "price": 237.89,
         "value": 4758,
         "cost": 2944,
         "gain": 1814,
@@ -289,8 +289,8 @@
         "ticker": "C",
         "brokers": "Degiro",
         "shares": 40,
-        "price": 117.79,
-        "value": 4712,
+        "price": 117.78,
+        "value": 4711,
         "cost": 2007,
         "gain": 2704,
         "gainPct": 134.7,
@@ -313,7 +313,7 @@
         "ticker": "MCD",
         "brokers": "Degiro",
         "shares": 20,
-        "price": 207.46,
+        "price": 207.43,
         "value": 4149,
         "cost": 5400,
         "gain": -1251,
@@ -397,7 +397,7 @@
         "ticker": "O",
         "brokers": "XTB",
         "shares": 61,
-        "price": 48.72,
+        "price": 48.71,
         "value": 2972,
         "cost": 3125,
         "gain": -153,
@@ -446,9 +446,9 @@
         "brokers": "XTB",
         "shares": 59,
         "price": 48.33,
-        "value": 2852,
+        "value": 2851,
         "cost": 2988,
-        "gain": -136,
+        "gain": -137,
         "gainPct": -4.6,
         "yieldPct": 0
       },
@@ -469,7 +469,7 @@
         "ticker": "XOM",
         "brokers": "Degiro",
         "shares": 20,
-        "price": 140.87,
+        "price": 140.85,
         "value": 2817,
         "cost": 895,
         "gain": 1922,
@@ -493,7 +493,7 @@
         "ticker": "HSY",
         "brokers": "Degiro",
         "shares": 19,
-        "price": 145.94,
+        "price": 145.92,
         "value": 2773,
         "cost": 3324,
         "gain": -551,
@@ -625,7 +625,7 @@
         "ticker": "KO",
         "brokers": "Degiro",
         "shares": 30,
-        "price": 77.03,
+        "price": 77.02,
         "value": 2311,
         "cost": 1633,
         "gain": 677,
