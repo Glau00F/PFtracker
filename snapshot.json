@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-09-29T08:00:03.047Z",
+  "exportedAt": "2026-09-29T11:00:03.223Z",
   "finance": {
     "asOf": {
       "year": 2026,
@@ -218,9 +218,9 @@
   },
   "portfolio": {
     "summary": {
-      "totalValue": 151111,
+      "totalValue": 151082,
       "totalCost": 106424,
-      "totalGain": 44687,
+      "totalGain": 44658,
       "totalGainPct": 42
     },
     "positions": [
@@ -229,11 +229,11 @@
         "ticker": "ALV.DE",
         "brokers": "Equate+, Degiro, Lightyear",
         "shares": 58.193,
-        "price": 426.6,
-        "value": 24825,
+        "price": 426.1,
+        "value": 24796,
         "cost": 8971,
-        "gain": 15854,
-        "gainPct": 176.7,
+        "gain": 15825,
+        "gainPct": 176.4,
         "yieldPct": 0
       },
       {
@@ -241,11 +241,11 @@
         "ticker": "WKL.AS",
         "brokers": "Lightyear",
         "shares": 94,
-        "price": 68.2,
-        "value": 6411,
+        "price": 67.78,
+        "value": 6371,
         "cost": 5506,
-        "gain": 905,
-        "gainPct": 16.4,
+        "gain": 866,
+        "gainPct": 15.7,
         "yieldPct": 3.8
       },
       {
@@ -301,11 +301,11 @@
         "ticker": "REP.MC",
         "brokers": "Broker ING",
         "shares": 148,
-        "price": 30.85,
-        "value": 4566,
+        "price": 30.42,
+        "value": 4502,
         "cost": 1486,
-        "gain": 3080,
-        "gainPct": 207.3,
+        "gain": 3017,
+        "gainPct": 203.1,
         "yieldPct": 0
       },
       {
@@ -326,10 +326,10 @@
         "brokers": "Degiro",
         "shares": 500,
         "price": 8.11,
-        "value": 4053,
+        "value": 4054,
         "cost": 2440,
-        "gain": 1613,
-        "gainPct": 66.1,
+        "gain": 1614,
+        "gainPct": 66.2,
         "yieldPct": 0
       },
       {
@@ -337,11 +337,11 @@
         "ticker": "LLOY.L",
         "brokers": "Degiro",
         "shares": 3000,
-        "price": 1.26,
-        "value": 3792,
+        "price": 1.27,
+        "value": 3799,
         "cost": 1491,
-        "gain": 2301,
-        "gainPct": 154.4,
+        "gain": 2308,
+        "gainPct": 154.8,
         "yieldPct": 0
       },
       {
@@ -349,11 +349,11 @@
         "ticker": "IBE.MC",
         "brokers": "Broker ING",
         "shares": 178,
-        "price": 20.51,
-        "value": 3651,
+        "price": 20.55,
+        "value": 3658,
         "cost": 2771,
-        "gain": 880,
-        "gainPct": 31.7,
+        "gain": 887,
+        "gainPct": 32,
         "yieldPct": 0
       },
       {
@@ -361,11 +361,11 @@
         "ticker": "ABN.AS",
         "brokers": "Lightyear",
         "shares": 78,
-        "price": 44.06,
-        "value": 3437,
+        "price": 43.88,
+        "value": 3423,
         "cost": 2302,
-        "gain": 1135,
-        "gainPct": 49.3,
+        "gain": 1121,
+        "gainPct": 48.7,
         "yieldPct": 0
       },
       {
@@ -373,11 +373,11 @@
         "ticker": "INGA.AS",
         "brokers": "XTB",
         "shares": 103,
-        "price": 32.08,
-        "value": 3304,
+        "price": 32.03,
+        "value": 3299,
         "cost": 2177,
-        "gain": 1127,
-        "gainPct": 51.8,
+        "gain": 1122,
+        "gainPct": 51.5,
         "yieldPct": 0
       },
       {
@@ -393,6 +393,18 @@
         "yieldPct": 0
       },
       {
+        "stock": "Sabadell",
+        "ticker": "SAB.MC",
+        "brokers": "Broker ING",
+        "shares": 800,
+        "price": 3.72,
+        "value": 2976,
+        "cost": 2554,
+        "gain": 422,
+        "gainPct": 16.5,
+        "yieldPct": 0
+      },
+      {
         "stock": "Realty Income",
         "ticker": "O",
         "brokers": "XTB",
@@ -405,27 +417,15 @@
         "yieldPct": 0
       },
       {
-        "stock": "Sabadell",
-        "ticker": "SAB.MC",
-        "brokers": "Broker ING",
-        "shares": 800,
-        "price": 3.71,
-        "value": 2968,
-        "cost": 2554,
-        "gain": 414,
-        "gainPct": 16.2,
-        "yieldPct": 0
-      },
-      {
         "stock": "Endesa",
         "ticker": "ELE.MC",
         "brokers": "Broker ING",
         "shares": 70,
-        "price": 41.99,
-        "value": 2939,
+        "price": 42.15,
+        "value": 2951,
         "cost": 1482,
-        "gain": 1458,
-        "gainPct": 98.4,
+        "gain": 1469,
+        "gainPct": 99.1,
         "yieldPct": 0
       },
       {
@@ -433,11 +433,11 @@
         "ticker": "BBVA.MC",
         "brokers": "Broker ING",
         "shares": 114,
-        "price": 25.48,
-        "value": 2905,
+        "price": 25.47,
+        "value": 2904,
         "cost": 1360,
-        "gain": 1544,
-        "gainPct": 113.5,
+        "gain": 1543,
+        "gainPct": 113.4,
         "yieldPct": 0
       },
       {
@@ -469,11 +469,11 @@
         "ticker": "LOG.MC",
         "brokers": "Broker ING",
         "shares": 80,
-        "price": 35.72,
-        "value": 2858,
+        "price": 35.52,
+        "value": 2842,
         "cost": 2196,
-        "gain": 662,
-        "gainPct": 30.1,
+        "gain": 646,
+        "gainPct": 29.4,
         "yieldPct": 0
       },
       {
@@ -481,11 +481,23 @@
         "ticker": "MAP.MC",
         "brokers": "Broker ING",
         "shares": 640,
-        "price": 4.34,
-        "value": 2778,
+        "price": 4.33,
+        "value": 2771,
         "cost": 1581,
-        "gain": 1197,
-        "gainPct": 75.7,
+        "gain": 1191,
+        "gainPct": 75.3,
+        "yieldPct": 0
+      },
+      {
+        "stock": "GSK",
+        "ticker": "GSK.L",
+        "brokers": "Degiro",
+        "shares": 124,
+        "price": 22.2,
+        "value": 2753,
+        "cost": 2073,
+        "gain": 679,
+        "gainPct": 32.8,
         "yieldPct": 0
       },
       {
@@ -501,27 +513,15 @@
         "yieldPct": 0
       },
       {
-        "stock": "GSK",
-        "ticker": "GSK.L",
-        "brokers": "Degiro",
-        "shares": 124,
-        "price": 22.05,
-        "value": 2734,
-        "cost": 2073,
-        "gain": 660,
-        "gainPct": 31.8,
-        "yieldPct": 0
-      },
-      {
         "stock": "Merlin Properties",
         "ticker": "MRL.MC",
         "brokers": "Broker ING",
         "shares": 220,
-        "price": 12.25,
-        "value": 2695,
+        "price": 12.32,
+        "value": 2710,
         "cost": 2415,
-        "gain": 280,
-        "gainPct": 11.6,
+        "gain": 295,
+        "gainPct": 12.2,
         "yieldPct": 0
       },
       {
@@ -529,11 +529,11 @@
         "ticker": "ACS.MC",
         "brokers": "Broker ING",
         "shares": 28,
-        "price": 91.95,
-        "value": 2575,
+        "price": 92.65,
+        "value": 2594,
         "cost": 529,
-        "gain": 2046,
-        "gainPct": 386.8,
+        "gain": 2065,
+        "gainPct": 390.5,
         "yieldPct": 0
       },
       {
@@ -541,11 +541,11 @@
         "ticker": "BKT.MC",
         "brokers": "Broker ING",
         "shares": 150,
-        "price": 16.57,
-        "value": 2486,
+        "price": 16.59,
+        "value": 2489,
         "cost": 979,
-        "gain": 1507,
-        "gainPct": 153.9,
+        "gain": 1510,
+        "gainPct": 154.2,
         "yieldPct": 0
       },
       {
@@ -553,11 +553,11 @@
         "ticker": "CSN.L",
         "brokers": "Degiro",
         "shares": 600,
-        "price": 4.14,
-        "value": 2484,
+        "price": 4.15,
+        "value": 2488,
         "cost": 1909,
-        "gain": 575,
-        "gainPct": 30.2,
+        "gain": 580,
+        "gainPct": 30.4,
         "yieldPct": 0
       },
       {
@@ -565,11 +565,11 @@
         "ticker": "ITX.MC",
         "brokers": "Broker ING",
         "shares": 46,
-        "price": 53.5,
-        "value": 2461,
+        "price": 53.56,
+        "value": 2464,
         "cost": 2006,
-        "gain": 455,
-        "gainPct": 22.7,
+        "gain": 458,
+        "gainPct": 22.8,
         "yieldPct": 0
       },
       {
@@ -577,11 +577,11 @@
         "ticker": "VIS.MC",
         "brokers": "Broker ING",
         "shares": 45,
-        "price": 53.8,
-        "value": 2421,
+        "price": 54,
+        "value": 2430,
         "cost": 2664,
-        "gain": -243,
-        "gainPct": -9.1,
+        "gain": -234,
+        "gainPct": -8.8,
         "yieldPct": 0
       },
       {
@@ -589,11 +589,11 @@
         "ticker": "VID.MC",
         "brokers": "Broker ING",
         "shares": 27,
-        "price": 89.2,
-        "value": 2408,
+        "price": 88.6,
+        "value": 2392,
         "cost": 2442,
-        "gain": -33,
-        "gainPct": -1.4,
+        "gain": -49,
+        "gainPct": -2,
         "yieldPct": 0
       },
       {
@@ -601,11 +601,11 @@
         "ticker": "AD.AS",
         "brokers": "XTB",
         "shares": 74,
-        "price": 32.02,
-        "value": 2369,
+        "price": 32.08,
+        "value": 2374,
         "cost": 2490,
-        "gain": -121,
-        "gainPct": -4.8,
+        "gain": -116,
+        "gainPct": -4.7,
         "yieldPct": 0
       },
       {
@@ -613,11 +613,11 @@
         "ticker": "SBRY.L",
         "brokers": "Degiro",
         "shares": 600,
-        "price": 3.86,
-        "value": 2317,
+        "price": 3.88,
+        "value": 2328,
         "cost": 2077,
-        "gain": 240,
-        "gainPct": 11.6,
+        "gain": 251,
+        "gainPct": 12.1,
         "yieldPct": 0
       },
       {
@@ -637,11 +637,11 @@
         "ticker": "BA.L",
         "brokers": "Degiro",
         "shares": 100,
-        "price": 22.87,
-        "value": 2287,
+        "price": 22.88,
+        "value": 2288,
         "cost": 1516,
-        "gain": 771,
-        "gainPct": 50.8,
+        "gain": 772,
+        "gainPct": 50.9,
         "yieldPct": 0
       },
       {
@@ -649,11 +649,11 @@
         "ticker": "MNG.L",
         "brokers": "Degiro",
         "shares": 600,
-        "price": 3.8,
-        "value": 2282,
+        "price": 3.81,
+        "value": 2286,
         "cost": 1417,
-        "gain": 865,
-        "gainPct": 61.1,
+        "gain": 869,
+        "gainPct": 61.4,
         "yieldPct": 0
       },
       {
@@ -661,11 +661,11 @@
         "ticker": "NG.L",
         "brokers": "Degiro",
         "shares": 170,
-        "price": 12.9,
-        "value": 2192,
+        "price": 13.08,
+        "value": 2224,
         "cost": 1937,
-        "gain": 255,
-        "gainPct": 13.2,
+        "gain": 286,
+        "gainPct": 14.8,
         "yieldPct": 0
       },
       {
@@ -673,11 +673,11 @@
         "ticker": "RIO.L",
         "brokers": "Degiro",
         "shares": 24,
-        "price": 82.95,
-        "value": 1991,
+        "price": 83.43,
+        "value": 2002,
         "cost": 1414,
-        "gain": 577,
-        "gainPct": 40.8,
+        "gain": 588,
+        "gainPct": 41.6,
         "yieldPct": 0
       },
       {
@@ -685,11 +685,11 @@
         "ticker": "DGE.L",
         "brokers": "Degiro",
         "shares": 86,
-        "price": 18.73,
-        "value": 1611,
+        "price": 18.64,
+        "value": 1603,
         "cost": 2406,
-        "gain": -796,
-        "gainPct": -33.1,
+        "gain": -803,
+        "gainPct": -33.4,
         "yieldPct": 0
       },
       {
@@ -697,23 +697,11 @@
         "ticker": "HEIA.AS",
         "brokers": "Freedom24",
         "shares": 20,
-        "price": 70.08,
-        "value": 1402,
+        "price": 69.9,
+        "value": 1398,
         "cost": 1454,
-        "gain": -53,
-        "gainPct": -3.6,
-        "yieldPct": 0
-      },
-      {
-        "stock": "Imperial Brands",
-        "ticker": "IMB.L",
-        "brokers": "Degiro",
-        "shares": 46,
-        "price": 28.6,
-        "value": 1315,
-        "cost": 1294,
-        "gain": 22,
-        "gainPct": 1.7,
+        "gain": -56,
+        "gainPct": -3.9,
         "yieldPct": 0
       },
       {
@@ -721,11 +709,23 @@
         "ticker": "DOM.MC",
         "brokers": "Broker ING",
         "shares": 500,
-        "price": 2.62,
-        "value": 1310,
+        "price": 2.63,
+        "value": 1315,
         "cost": 1597,
-        "gain": -287,
-        "gainPct": -18,
+        "gain": -282,
+        "gainPct": -17.7,
+        "yieldPct": 0
+      },
+      {
+        "stock": "Imperial Brands",
+        "ticker": "IMB.L",
+        "brokers": "Degiro",
+        "shares": 46,
+        "price": 28.52,
+        "value": 1312,
+        "cost": 1294,
+        "gain": 18,
+        "gainPct": 1.4,
         "yieldPct": 0
       },
       {
@@ -758,10 +758,10 @@
         "brokers": "Degiro",
         "shares": 1000,
         "price": 0.93,
-        "value": 928,
+        "value": 929,
         "cost": 1294,
-        "gain": -366,
-        "gainPct": -28.3,
+        "gain": -365,
+        "gainPct": -28.2,
         "yieldPct": 0
       }
     ],
