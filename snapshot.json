@@ -1,21 +1,21 @@
 {
-  "exportedAt": "2026-10-31T18:00:02.470Z",
+  "exportedAt": "2026-11-01T12:00:03.977Z",
   "finance": {
     "asOf": {
       "year": 2026,
-      "month": 10
+      "month": 11
     },
     "summary": {
-      "assets": 668797,
+      "assets": 668976,
       "liabilities": 0,
-      "netWorth": 668797,
-      "exclApt": 369797,
+      "netWorth": 668976,
+      "exclApt": 369976,
       "debtRatio": 0,
       "emergencyFund": {
-        "liquid": 26320,
-        "covered": 8.9,
+        "liquid": 26622,
+        "covered": 9.6,
         "target": 10,
-        "targetAmount": 29480,
+        "targetAmount": 27796,
         "ok": false
       }
     },
@@ -30,25 +30,25 @@
         "key": "investments",
         "label": "Investments",
         "section": "Assets",
-        "value": 161218
+        "value": 161232
       },
       {
         "key": "lockedsavings",
         "label": "Locked savings",
         "section": "Assets",
-        "value": 178537
+        "value": 178700
       },
       {
         "key": "liquidsavings",
         "label": "Liquid savings",
         "section": "Assets",
-        "value": 26320
+        "value": 26622
       },
       {
         "key": "liquidity",
         "label": "Liquidity",
         "section": "Assets",
-        "value": 3721
+        "value": 3422
       },
       {
         "key": "credit",
@@ -90,9 +90,9 @@
       },
       {
         "year": 2026,
-        "month": 10,
-        "netWorth": 668797,
-        "exclApt": 369797
+        "month": 11,
+        "netWorth": 668976,
+        "exclApt": 369976
       }
     ],
     "projections": [
@@ -128,82 +128,82 @@
       },
       {
         "year": 2026,
-        "month": 10,
+        "month": 11,
         "projected": false,
-        "netWorth": 668797,
-        "exclApt": 369797
+        "netWorth": 668976,
+        "exclApt": 369976
       },
       {
         "year": 2026,
         "projected": true,
-        "netWorth": 679646,
-        "exclApt": 375172
+        "netWorth": 674379,
+        "exclApt": 372654
       },
       {
         "year": 2027,
         "projected": true,
-        "netWorth": 748775,
-        "exclApt": 409286
+        "netWorth": 742944,
+        "exclApt": 406521
       },
       {
         "year": 2028,
         "projected": true,
-        "netWorth": 825374,
-        "exclApt": 446845
+        "netWorth": 818917,
+        "exclApt": 443805
       },
       {
         "year": 2029,
         "projected": true,
-        "netWorth": 910279,
-        "exclApt": 488218
+        "netWorth": 903125,
+        "exclApt": 484875
       },
       {
         "year": 2030,
         "projected": true,
-        "netWorth": 1004418,
-        "exclApt": 533820
+        "netWorth": 996488,
+        "exclApt": 530140
       },
       {
         "year": 2031,
         "projected": true,
-        "netWorth": 1108826,
-        "exclApt": 584109
+        "netWorth": 1100034,
+        "exclApt": 580056
       },
       {
         "year": 2032,
         "projected": true,
-        "netWorth": 1224655,
-        "exclApt": 639597
+        "netWorth": 1214904,
+        "exclApt": 635129
       },
       {
         "year": 2033,
         "projected": true,
-        "netWorth": 1353191,
-        "exclApt": 700851
+        "netWorth": 1342373,
+        "exclApt": 695924
       },
       {
         "year": 2034,
         "projected": true,
-        "netWorth": 1495865,
-        "exclApt": 768506
+        "netWorth": 1483860,
+        "exclApt": 763068
       },
       {
         "year": 2035,
         "projected": true,
-        "netWorth": 1654272,
-        "exclApt": 843266
+        "netWorth": 1640945,
+        "exclApt": 837263
       },
       {
         "year": 2036,
         "projected": true,
-        "netWorth": 1830190,
-        "exclApt": 925918
+        "netWorth": 1815392,
+        "exclApt": 919286
       },
       {
         "year": 2037,
         "projected": true,
-        "netWorth": 2025600,
-        "exclApt": 1017337
+        "netWorth": 2009165,
+        "exclApt": 1010007
       }
     ],
     "projAssumptions": {
@@ -218,10 +218,10 @@
   },
   "portfolio": {
     "summary": {
-      "totalValue": 156496,
-      "totalCost": 106862,
-      "totalGain": 49634,
-      "totalGainPct": 46.4
+      "totalValue": 157909,
+      "totalCost": 108387,
+      "totalGain": 49522,
+      "totalGainPct": 45.7
     },
     "positions": [
       {
@@ -714,6 +714,18 @@
         "cost": 1454,
         "gain": 137,
         "gainPct": 9.4,
+        "yieldPct": 0
+      },
+      {
+        "stock": "ASML",
+        "ticker": "ASML.AS",
+        "brokers": "XTB, Lightyear",
+        "shares": 1,
+        "price": 1412.8,
+        "value": 1413,
+        "cost": 1525,
+        "gain": -112,
+        "gainPct": -7.3,
         "yieldPct": 0
       },
       {
