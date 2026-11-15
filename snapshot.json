@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-11-14T18:00:03.317Z",
+  "exportedAt": "2026-11-15T12:00:03.255Z",
   "finance": {
     "asOf": {
       "year": 2026,
@@ -15,7 +15,7 @@
         "liquid": 26929,
         "covered": 10.3,
         "target": 11,
-        "targetAmount": 28662,
+        "targetAmount": 28677,
         "ok": false
       }
     },
